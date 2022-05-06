@@ -1,16 +1,15 @@
 # BotDetector
 
 git clone git@github.com:vijayavelanr/BotDetector.git
+set JAVA_HOME=C:\Users\developer\.jdks\corretto-1.8.0_332\bin
 
 cd BotDetector/scripts
 
-set JAVA_HOME=C:\Users\developer\.jdks\corretto-1.8.0_332\bin
-
         Starts the server on default PORT 8080
-**        ./runBot.cmd**
+        ./runBot.cmd
 
 Alternatively to change the port to something we need, maybe we choose 9090
-      **  ./runBot.cmd 9090**
+        ./runBot.cmd 9090
 
 **Once server is started, we can use the curl command to query the server
 **
