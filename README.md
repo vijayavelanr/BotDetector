@@ -36,8 +36,8 @@ $  **curl -v -s http://localhost:8080/bot/prove -X POST -d '{"question":"Please 
 >
 } [100 bytes data]
 * Mark bundle as not supporting multiuse
-< HTTP/1.1 200
-< Content-Type: application/json
+**< HTTP/1.1 200
+**< Content-Type: application/json
 < Content-Length: 11
 < Date: Fri, 06 May 2022 21:33:40 GMT
 <
@@ -61,15 +61,54 @@ $  **curl -v -s http://localhost:8080/bot/prove -X POST -d '{"question":"Please 
 >
 } [100 bytes data]
 * Mark bundle as not supporting multiuse
-< HTTP/1.1 400
-< Content-Length: 0
+**< HTTP/1.1 400
+**< Content-Length: 0
 < Date: Fri, 06 May 2022 21:23:10 GMT
 < Connection: close
 <
 * Closing connection 0
 
 
-**While Sending Tampered Data**
+**While Sending Tampered uid Data**
 =================================================================
 
+$  curl -v -s http://localhost:8080/bot/prove -X POST -d '{"question":"Please sum the numbers 6,1,3","id":"f4efb905-e974-4e3e-a857-94da51776d","answer": 10}'  -H "Content-Type: application/json"
+*   Trying 127.0.0.1:8080...
+* Connected to localhost (127.0.0.1) port 8080 (#0)
+> POST /bot/prove HTTP/1.1
+> Host: localhost:8080
+> User-Agent: curl/7.81.0
+> Accept: */*
+> Content-Type: application/json
+> Content-Length: 98
+>
+} [98 bytes data]
+* Mark bundle as not supporting multiuse
+**< HTTP/1.1 400
+**< Content-Length: 0
+< Date: Fri, 06 May 2022 21:46:20 GMT
+< Connection: close
+<
+* Closing connection 0
+
+**While Sending Tampered Question**
+====================================================================
+$  curl -v -s http://localhost:8080/bot/prove -X POST -d '{"question":"Please sum the numbers 6,1,1","id":"f4efb905-e974-4e3e-a857-94da5177fc6d","answer": 8}'  -H "Content-Type: application/json"
+*   Trying 127.0.0.1:8080...
+* Connected to localhost (127.0.0.1) port 8080 (#0)
+> POST /bot/prove HTTP/1.1
+> Host: localhost:8080
+> User-Agent: curl/7.81.0
+> Accept: */*
+> Content-Type: application/json
+> Content-Length: 99
+>
+} [99 bytes data]
+* Mark bundle as not supporting multiuse
+**< HTTP/1.1 400
+**< Content-Length: 0
+< Date: Fri, 06 May 2022 21:47:22 GMT
+< Connection: close
+<
+* Closing connection 0
 
