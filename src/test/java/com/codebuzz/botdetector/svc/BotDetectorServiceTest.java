@@ -24,7 +24,7 @@ class BotDetectorServiceTest {
         svc.getClientIdentityRepo().put(id, realPerson);
 
         ChallengeResponse realPersonResponse = new ChallengeResponse(id, realPerson.question, 13);
-        svc.isHuman(realPersonResponse);
+        svc.validateHuman(realPersonResponse);
 
     }
 
@@ -37,7 +37,7 @@ class BotDetectorServiceTest {
 
         ChallengeResponse realPersonResponse = new ChallengeResponse(id, realPerson.question, 153);
         Exception exception = assertThrows(NotAHumanException.class, () -> {
-            svc.isHuman(realPersonResponse);
+            svc.validateHuman(realPersonResponse);
         });
 
         String expectedMessage = "Bad Inputs";

@@ -5,7 +5,6 @@ import com.codebuzz.botdetector.dto.ChallengeResponse;
 import com.codebuzz.botdetector.exception.NotAHumanException;
 import com.codebuzz.botdetector.svc.BotDetectorService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -46,7 +45,7 @@ public class BotDetectorApi {
 
         String authecticatedPerson = null;
         try {
-            authecticatedPerson = botDetectorService.isHuman(realPersonResponse);
+            authecticatedPerson = botDetectorService.validateHuman(realPersonResponse);
             return ResponseEntity.ok().body(authecticatedPerson);
         } catch (NotAHumanException e) {
             return ResponseEntity.badRequest().body("Bad Request - " + e.getMessage());

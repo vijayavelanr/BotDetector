@@ -19,7 +19,7 @@ public class BotDetectorService {
         return clientIdentityRepo;
     }
 
-    public String isHuman(ChallengeResponse realPersonResponse) throws NotAHumanException {
+    public String validateHuman(ChallengeResponse realPersonResponse) throws NotAHumanException {
 
         Objects.nonNull(realPersonResponse);
         if (null == getClientIdentityRepo().get(realPersonResponse.getId())) {
