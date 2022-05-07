@@ -49,10 +49,7 @@ public class BotDetectorApi {
             authecticatedPerson = botDetectorService.isHuman(realPersonResponse);
             return ResponseEntity.ok().body(authecticatedPerson);
         } catch (NotAHumanException e) {
-
-
-            e.printStackTrace();
-            return ResponseEntity.badRequest().body("Bot Detected");
+            return ResponseEntity.badRequest().body("Bad Request - " + e.getMessage());
         }
     }
 }
