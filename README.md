@@ -4,7 +4,7 @@ Implementation
 
 1. Bot Generates Randon Numbers to be summed by client
 2. Bot also uses uuid to keep track of client to identify known client and challenge question // may be thinking there is a better way or we could use just the hash for the request.
-3. since clients answer come back part of response body, '{"question":"Please sum the numbers 8,2,6","id":"b00f4c8e-13eb-4f0c-9736-76e33370fc8b",**"answer": 12**}', direct hash to request would not work.
+3. since clients answer come back part of response request body, '{"question":"Please sum the numbers 8,2,6","id":"b00f4c8e-13eb-4f0c-9736-76e33370fc8b",**"answer": 12**}', direct hash to request would not work.
 4. Maybe session could have been used to keep track of client requests, but scalability should thought throw to replicate session in-memory.
 
 git clone git@github.com:vijayavelanr/BotDetector.git
