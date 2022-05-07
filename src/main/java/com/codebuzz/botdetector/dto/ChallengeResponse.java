@@ -1,14 +1,14 @@
 package com.codebuzz.botdetector.dto;
 
-public class RealPersonResponse {
+public class ChallengeResponse {
     String id;
     public String question;
     Integer answer;
 
-    public RealPersonResponse() {
+    public ChallengeResponse() {
 
     }
-    public RealPersonResponse(String id, String question, Integer answer) {
+    public ChallengeResponse(String id, String question, Integer answer) {
         this.id = id;
         this.question = question;
         this.answer = answer;

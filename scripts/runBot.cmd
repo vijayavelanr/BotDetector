@@ -10,4 +10,4 @@ set SERVER_PORT=8080
 set SERVER_PORT=9090
 )
 
-java -jar ../target/botdetector-0.0.1-SNAPSHOT.jar
+%JAVA_HOME%/bin/java -jar ../target/botdetector-0.0.1-SNAPSHOT.jar
